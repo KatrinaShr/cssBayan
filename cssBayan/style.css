@@ -24,7 +24,7 @@ span {
 }
 
 .line {
-    border-bottom: 1px solid #c2c6cc;
+    border-bottom: 0,0625rem solid #c2c6cc;
 }
 
 h1 {
@@ -79,10 +79,7 @@ img {
     color: #075CD9;
 }
 
-.container__list:hover {
-    color: black;
-    cursor: pointer;
-}
+
 
 .description:has(input[type=radio]:checked) {
     color: black;
@@ -90,31 +87,6 @@ img {
 
 .container__list {
     font-size: calc((100vw - 20rem)/(80 - 20) * (1.4 - 1) + 1rem);
-}
-
-.container__list:hover .close-btn {
-    display: block;
-}
-
-.description:hover,
-.label-choices:hover {
-    cursor: pointer;
-}
-
-.contactChoice:hover,
-input:hover {
-    cursor: pointer;
-}
-
-.description:hover .description__more {
-    height: 23rem;
-    visibility: visible;
-    opacity: 1;
-    transition: 0.4s;
-}
-
-.description:hover .close-btn {
-    transform: rotate(45deg);
 }
 
 .description:has(input[type=radio]:checked) .close-btn {
@@ -157,10 +129,6 @@ input[type=radio]::-webkit-slider-thumb {
 }
 
 @media (min-width: 820px) {
-    .description:hover .description__more {
-        height: 26rem;
-    }
-
     .description:has(input[type=radio]:checked) .description__more {
         height: 26rem;
     }
@@ -171,12 +139,53 @@ input[type=radio]::-webkit-slider-thumb {
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 820px) and (hover: hover) {
     .description:hover .description__more {
-        height: 31rem;
+        height: 26rem;
     }
+}
 
+@media (min-width: 1920px) {
     .description:has(input[type=radio]:checked) .description__more {
         height: 31rem;
     }
 }
+
+@media (min-width: 1920px) and (hover: hover) {
+    .description:hover .description__more {
+        height: 31rem;
+    }
+}
+
+@media (hover: hover) {
+    .container__list:hover {
+        color: black;
+        cursor: pointer;
+    }
+
+    .container__list:hover .close-btn {
+        display: block;
+    }
+    
+    .description:hover,
+    .label-choices:hover {
+        cursor: pointer;
+    }
+    
+    .contactChoice:hover,
+    input:hover {
+        cursor: pointer;
+    }
+    
+    .description:hover .description__more {
+        height: 23rem;
+        visibility: visible;
+        opacity: 1;
+        transition: 0.4s;
+    }
+    
+    .description:hover .close-btn {
+        transform: rotate(45deg);
+    }
+    
+  }
